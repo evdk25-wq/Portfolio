@@ -586,3 +586,70 @@ body.menu-open .container {
     font-size: clamp(30px, 7vw, 70px);
   }
 }
+
+.social {
+  position: fixed;
+  bottom: 40px;
+  right: 0;
+  z-index: 9999;
+}
+
+.social ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.social ul li {
+  background: rgba(0, 0, 0, 0.7);
+  margin-bottom: 8px;
+  width: 180px;
+  border-radius: 30px 0 0 30px;
+  transform: translateX(130px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social ul li:hover {
+  transform: translateX(0);
+}
+
+.social ul li.linkedin:hover {
+  background: #0077b5;
+}
+
+.social ul li.share:hover {
+  background: #607d8b;
+}
+
+.social ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  padding: 8px;
+}
+
+.social ul li i {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: transform 0.4s;
+}
+
+.social ul li:hover i {
+  transform: rotate(360deg);
+}
+
+.social ul li span {
+  padding-left: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

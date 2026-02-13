@@ -127,3 +127,14 @@ if (next && prev) {
   });
 }
 
+function shareSite(e) {
+  e.preventDefault();
+  if (navigator.share) {
+    navigator.share({
+      title: 'WebFrabik Portfolio',
+      url: window.location.href
+    }).catch(console.error);
+  } else {
+    alert("Le partage n'est pas supporté sur ce navigateur, copiez l'URL manuellement.");
+  }
+}
