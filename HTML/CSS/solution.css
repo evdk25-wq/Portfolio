@@ -1,0 +1,276 @@
+/* ------- Configuration Variables ------- */
+:root {
+  --color-black: #000000;
+  --color-light: #efeeec;
+  --color-border: #efeeec14;
+  --color-button-bg: #efeeec0f;
+  --color-accent: #efeeec;
+  --container-padding: 4vw;
+}
+
+/* ------- Base Styles ------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-black);
+  color: var(--color-light);
+  font-size: clamp(14px, 1vw, 20px);
+  font-family: 'PP Neue Montreal', Arial, sans-serif;
+  overflow-x: hidden;
+  line-height: 1.5;
+  cursor: url("https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb/671251b239d7aeb290a31ac5_cursor-default%402x.svg") 2 0, auto;
+}
+
+a,
+button {
+  cursor: url("https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb/671251b212e6b71494aa67ff_cursor-pointer%402x.svg") 12 0, pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ------- Layout ------- */
+.cloneable {
+  padding: var(--container-padding);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.tab-layout {
+  z-index: 1;
+  width: 90%;
+  max-width: 1440px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  align-items: flex-start;
+}
+
+.tab-layout-col {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ------- Tab Content Side ------- */
+.tab-layout-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tab-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  padding-right: 2em;
+}
+
+.tab-layout-heading {
+  font-size: 3.5em;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+  letter-spacing: -0.03em;
+}
+
+/* ------- Navigation / Filter Bar ------- */
+.filter-bar {
+  background-color: var(--color-button-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5em;
+  padding: 0.4em;
+  display: inline-flex;
+  gap: 0.2em;
+}
+
+.filter-button {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 1em 2em;
+  position: relative;
+  font-size: 1.1em;
+  transition: border-color 0.3s ease;
+  overflow: visible;
+}
+
+.filter-button.active {
+  border-color: #efeeec4d;
+  border-radius: 0.25em;
+}
+
+.filter-button__p {
+  z-index: 2;
+  position: relative;
+}
+
+.tab-button__bg {
+  z-index: 1;
+  background-color: #efeeec1a;
+  border-radius: 0.2em;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ------- Tab Items Logic ------- */
+.tab-content-wrap {
+  position: relative;
+  min-height: 20em;
+  /* Hauteur minimale augmentée pour éviter les sauts */
+  transition: height 0.3s ease;
+  /* Transition douce si la hauteur change */
+}
+
+.tab-content-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  visibility: hidden;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.tab-content-item.active {
+  visibility: visible;
+  opacity: 1;
+  position: absolute;
+  /* Reste en absolute pour éviter le saut de hauteur */
+}
+
+.tab-content__heading {
+  font-size: 2em;
+  font-weight: 500;
+  margin: 0;
+}
+
+.content-p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  color: #efeeecb3;
+}
+
+.opacity--80 {
+  opacity: 0.8;
+}
+
+/* ------- CTA Button ------- */
+.tab-content__button {
+  background-color: transparent;
+  color: var(--color-light);
+  border: 1px solid var(--color-border);
+  padding: 1em 2em;
+  border-radius: 0.4em;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 400;
+  width: fit-content;
+  margin-top: 2em;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-content__button .content-p {
+  position: relative;
+  z-index: 2;
+  color: var(--color-light);
+  margin: 0;
+}
+
+.tab-content__button:hover {
+  border-color: var(--color-light);
+  background-color: rgba(239, 238, 236, 0.05);
+}
+
+.content-button__bg {
+  display: none;
+  /* On n'utilise plus ce bg animé */
+}
+
+/* ------- Visual Side ------- */
+.tab-visual-wrap {
+  border-radius: 0.8em;
+  width: 100%;
+  height: 45em;
+  max-height: 75vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-visual-item {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.tab-visual-item.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tab-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ------- Credits & Fonts ------- */
+.osmo-credits {
+  position: fixed;
+  bottom: 2em;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.osmo-credits__p {
+  font-size: 0.9em;
+  color: #efeeec4d;
+  pointer-events: auto;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('https://cdn.prod.website-files.com/6819ed8312518f61b84824df/6819ed8312518f61b84825ba_PPNeueMontreal-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ------- Responsive ------- */
+@media (max-width: 991px) {
+  .tab-layout {
+    flex-direction: column;
+  }
+
+  .tab-layout-col {
+    width: 100%;
+  }
+
+  .tab-visual-wrap {
+    height: 30em;
+  }
+
+  .tab-container {
+    padding-right: 0;
+  }
+}
