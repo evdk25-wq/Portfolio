@@ -27,13 +27,9 @@ Voici un aperçu des applications que j'ai conçues et développées :
 
 ---
 
-## Me Contacter
 
-Basé à Bruxelles, je suis disponible pour l'étude et la réalisation de vos projets digitaux.
 
-*   **LinkedIn :** [Edwin VDK](https://www.linkedin.com/in/j-l-vdk)
-*   **Email :** [evdk25@gmail.com](mailto:evdk25@gmail.com)
-*   **GitHub :** [evdk25-wq](https://github.com/evdk25-wq)
+
 
 ---
 *Dernière mise à jour : 2026*
