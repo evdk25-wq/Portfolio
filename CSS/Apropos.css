@@ -101,7 +101,7 @@
 .profile-card .profile-bio {
   flex: 1;
   padding: 50px 40px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.95);
   opacity: 0;
   text-align: left;
   animation: moveIn 1s 2.8s ease forwards;
@@ -112,8 +112,9 @@
 
 .profile-card .profile-bio p {
   font-family: var(--font-body);
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 300;
 }
 
 .profile-social-links {
