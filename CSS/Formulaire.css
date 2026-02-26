@@ -1,13 +1,13 @@
-/* Importing fonts from Google Fonts API */
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lexend:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
-/* Resetting default margin and padding for all elements */
+
 * {
     margin: 0;
     padding: 0;
 }
 
-/* Setting font family for the body */
+
 body {
     font-family: "Plus Jakarta Sans", sans-serif;
     background: var(--color-primary, #061e32);
@@ -16,10 +16,10 @@ body {
     justify-content: center;
     align-items: center;
     padding-left: 120px;
-    /* Offset for fixed menu */
+    
 }
 
-/* Styling for contact box container */
+
 .contact-box {
     background: #ffffff;
     display: flex;
@@ -30,13 +30,13 @@ body {
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
-/* Styling for left container inside the contact box */
+
 .container-left {
     flex-basis: 60%;
     padding: 60px 80px;
 }
 
-/* Styling for right container inside the contact box */
+
 .container-right {
     flex-basis: 40%;
     padding: 60px 80px;
@@ -45,33 +45,33 @@ body {
     border-radius: 0px 20px 20px 0px;
 }
 
-/* Styling for heading inside left container */
+
 .container-left h3 {
     font-size: 38px;
     color: #353535;
     margin-bottom: 30px;
 }
 
-/* Styling for heading inside right container */
+
 .container-right h3 {
     font-size: 38px;
     color: #ffffff;
     margin-bottom: 30px;
 }
 
-/* Styling for input rows */
+
 .input-row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
 }
 
-/* Styling for input groups inside input rows */
+
 .input-row .input-group {
     flex-basis: 45%;
 }
 
-/* Styling for input fields */
+
 input {
     width: 95%;
     border: none;
@@ -83,7 +83,7 @@ input {
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-/* Styling for textareas */
+
 textarea {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 18px;
@@ -95,7 +95,7 @@ textarea {
     box-sizing: border-box;
 }
 
-/* Styling for labels */
+
 label {
     margin-bottom: 15px;
     font-size: 24px;
@@ -104,7 +104,7 @@ label {
     color: #353535;
 }
 
-/* Styling for buttons */
+
 button {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 600;
@@ -121,14 +121,14 @@ button {
     box-shadow: 0px 5px 10px 0px #0000003a;
 }
 
-/* Hover styling for buttons */
+
 button:hover {
     color: #fff;
     background: hsl(207, 97%, 35%);
     box-shadow: 0px 5px 10px 0px hsla(207, 97%, 35%, 0.431);
 }
 
-/* Styling for table cells */
+
 tr td:first-child {
     font-size: 26px;
     font-weight: 600;
@@ -139,7 +139,7 @@ tr td {
     padding-top: 20px;
 }
 
-/* Styling for iframes */
+
 iframe {
     width: 100%;
     border: none;
@@ -148,7 +148,7 @@ iframe {
     margin-top: 30px;
 }
 
-/* CSS for larger screens (laptop) */
+
 @media only screen and (min-width: 1367px) {
     .container {
         width: 70%;
@@ -176,7 +176,7 @@ iframe {
     }
 }
 
-/* CSS for larger screens (laptop) */
+
 @media only screen and (max-width: 1366px) {
     .container {
         width: 70%;
@@ -208,7 +208,7 @@ iframe {
     }
 }
 
-/* CSS for medium-sized screens (tablet) */
+
 @media only screen and (max-width: 1024px) {
 
     .contact-box {
@@ -246,7 +246,7 @@ iframe {
     }
 }
 
-/* CSS for smaller screens (mobile) */
+
 @media only screen and (max-width: 767px) {
     .container {
         width: 90%;
@@ -267,7 +267,7 @@ iframe {
 
     .input-row {
         flex-direction: column;
-        /* Stack input rows vertically */
+        
     }
 
     .input-row .input-group {

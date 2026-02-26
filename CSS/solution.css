@@ -94,7 +94,7 @@ body {
 	background-image: url("https://picsum.photos/1920/1080?random=5");
 }
 
-/* Motion blur background elements */
+
 .blur-element {
 	position: absolute;
 	border-radius: 50%;
@@ -143,7 +143,7 @@ body {
 	}
 }
 
-/* Central content that stays fixed */
+
 .central-content {
 	position: fixed;
 	top: 50%;
@@ -170,7 +170,7 @@ body {
 	transform: scale(1);
 }
 
-/* Text animations */
+
 .portfolio-number {
 	font-size: 14px;
 	letter-spacing: 2px;
@@ -216,7 +216,7 @@ body {
 	transform: translateY(-2px);
 }
 
-/* Animation keyframes */
+
 @keyframes slideInFromTop {
 	0% {
 		opacity: 0;
@@ -275,7 +275,7 @@ body {
 	}
 }
 
-/* Animation states for transitions */
+
 .text-exit {
 	animation: fadeOutDown 0.4s ease-in forwards;
 }
@@ -296,7 +296,7 @@ body {
 	}
 }
 
-/* Navigation dots */
+
 .nav-dots {
 	position: fixed;
 	right: 30px;
@@ -320,7 +320,7 @@ body {
 	transform: scale(1.2);
 }
 
-/* Scroll indicator */
+
 .scroll-indicator {
 	position: fixed;
 	bottom: 30px;
@@ -345,7 +345,7 @@ body {
 	}
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
 	.portfolio-item {
 		min-width: 300px;

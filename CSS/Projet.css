@@ -1,4 +1,4 @@
-/* Grid Layout for Projects */
+
 .projects-container {
     width: calc(100% - 120px);
     height: 100vh;
@@ -8,7 +8,7 @@
     background: var(--bg-gradient);
 }
 
-/* Custom Scrollbar */
+
 .projects-container::-webkit-scrollbar {
     width: 6px;
 }
@@ -22,7 +22,7 @@
     border-radius: 10px;
 }
 
-/* Flip Card Grid Styles */
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -73,7 +73,7 @@
     background-color: #0a1428;
 }
 
-/* Back Animation Effect */
+
 .project-card-back::before {
     position: absolute;
     content: ' ';
@@ -142,7 +142,7 @@
     }
 }
 
-/* Reusing Phone Mockup for Front */
+
 .phone-mockup {
     position: relative;
     width: 200px;
