@@ -1,168 +1,292 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+/* Importing fonts from Google Fonts API */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lexend:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: #aca49c;
-  font-size: 0.875em;
+/* Resetting default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
 }
 
-input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
-  color: #bbb5af;
-}
-
-input::-moz-placeholder, textarea::-moz-placeholder {
-  color: #aca49c;
-  font-size: 0.875em;
-}
-
-input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
-  color: #bbb5af;
-}
-
-input::placeholder, textarea::placeholder {
-  color: #aca49c;
-  font-size: 0.875em;
-}
-
-input:focus::placeholder, textarea::focus:placeholder {
-  color: #bbb5af;
-}
-
-input::-ms-placeholder, textarea::-ms-placeholder {
-  color: #aca49c;
-  font-size: 0.875em;
-}
-
-input:focus::-ms-placeholder, textarea:focus::-ms-placeholder {
-  color: #bbb5af;
-}
-
-/* on hover placeholder */
-
-input:hover::-webkit-input-placeholder, textarea:hover::-webkit-input-placeholder {
-  color: #e2dedb;
-  font-size: 0.875em;
-}
-
-input:hover:focus::-webkit-input-placeholder, textarea:hover:focus::-webkit-input-placeholder {
-  color: #cbc6c1;
-}
-
-input:hover::-moz-placeholder, textarea:hover::-moz-placeholder {
-  color: #e2dedb;
-  font-size: 0.875em;
-}
-
-input:hover:focus::-moz-placeholder, textarea:hover:focus::-moz-placeholder {
-  color: #cbc6c1;
-}
-
-input:hover::placeholder, textarea:hover::placeholder {
-  color: #e2dedb;
-  font-size: 0.875em;
-}
-
-input:hover:focus::placeholder, textarea:hover:focus::placeholder {
-  color: #cbc6c1;
-}
-
-input:hover::placeholder, textarea:hover::placeholder {
-  color: #e2dedb;
-  font-size: 0.875em;
-}
-
-input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
-  color: #cbc6c1;
-}
-
+/* Setting font family for the body */
 body {
-  font-family: 'Lato', sans-serif;
-  background: #e2dedb;
-  color: #b3aca7;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background: var(--color-primary, #061e32);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 120px;
+    /* Offset for fixed menu */
 }
 
-header {
-  position: relative;
-  margin: 100px 0 25px 0;
-  font-size: 2.3em;
-  text-align: center;
-  letter-spacing: 7px;
+/* Styling for contact box container */
+.contact-box {
+    background: #ffffff;
+    display: flex;
+    border-radius: 20px;
+    width: 1100px;
+    max-width: 90%;
+    margin: 40px auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
-#form {
-  position: relative;
-  width: 500px;
-  margin: 50px auto 100px auto;
+/* Styling for left container inside the contact box */
+.container-left {
+    flex-basis: 60%;
+    padding: 60px 80px;
 }
 
+/* Styling for right container inside the contact box */
+.container-right {
+    flex-basis: 40%;
+    padding: 60px 80px;
+    background: #091325;
+    color: #ffffff;
+    border-radius: 0px 20px 20px 0px;
+}
+
+/* Styling for heading inside left container */
+.container-left h3 {
+    font-size: 38px;
+    color: #353535;
+    margin-bottom: 30px;
+}
+
+/* Styling for heading inside right container */
+.container-right h3 {
+    font-size: 38px;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+/* Styling for input rows */
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Styling for input groups inside input rows */
+.input-row .input-group {
+    flex-basis: 45%;
+}
+
+/* Styling for input fields */
 input {
-  font-family: 'Lato', sans-serif;
-  font-size: 0.875em;
-  width: 470px;
-  height: 50px;
-  padding: 0px 15px 0px 15px;
-  
-  background: transparent;
-  outline: none;
-  color: #726659;
-  
-  border: solid 1px #b3aca7;
-  border-bottom: none;
-  
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
+    width: 95%;
+    border: none;
+    color: #353535;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 18px;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-input:hover {
-  background: #b3aca7;
-  color: #e2dedb;
-}
-
+/* Styling for textareas */
 textarea {
-  width: 470px;
-  max-width: 470px;
-  height: 110px;
-  max-height: 110px;
-  padding: 15px;
-  
-  background: transparent;
-  outline: none;
-  
-  color: #726659;
-  font-family: 'Lato', sans-serif;
-  font-size: 0.875em;
-  
-  border: solid 1px #b3aca7;
-  
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 18px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    outline: none;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
-textarea:hover {
-  background: #b3aca7;
-  color: #e2dedb;
+/* Styling for labels */
+label {
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 600;
+    display: block;
+    color: #353535;
 }
 
-#submit {
-  width: 470px;
-  
-  padding: 0;
-  margin: -5px 0px 0px 0px;
-  
-  font-family: 'Lato', sans-serif;
-  font-size: 0.875em;
-  color: #b3aca7;
-  
-  outline:none;
-  cursor: pointer;
-  
-  border: solid 1px #b3aca7;
-  border-top: none;
+/* Styling for buttons */
+button {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    background: #000000;
+    border: none;
+    outline: none;
+    color: #fff;
+    width: 200px;
+    height: 60px;
+    border-radius: 30px;
+    margin-top: 30px;
+    transition: all 0.5s ease 0s;
+    box-shadow: 0px 5px 10px 0px #0000003a;
 }
 
-#submit:hover {
-  color: #e2dedb;
+/* Hover styling for buttons */
+button:hover {
+    color: #fff;
+    background: hsl(207, 97%, 35%);
+    box-shadow: 0px 5px 10px 0px hsla(207, 97%, 35%, 0.431);
+}
+
+/* Styling for table cells */
+tr td:first-child {
+    font-size: 26px;
+    font-weight: 600;
+    padding-right: 30px;
+}
+
+tr td {
+    padding-top: 20px;
+}
+
+/* Styling for iframes */
+iframe {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    margin-top: 30px;
+}
+
+/* CSS for larger screens (laptop) */
+@media only screen and (min-width: 1367px) {
+    .container {
+        width: 70%;
+    }
+
+    .container h1 {
+        font-size: 50px;
+    }
+
+    .container p {
+        font-size: 25px;
+    }
+
+    .container-left,
+    .container-right {
+        padding: 40px;
+    }
+
+    .input-row .input-group {
+        flex-basis: 48%;
+    }
+
+    button {
+        width: 30%;
+    }
+}
+
+/* CSS for larger screens (laptop) */
+@media only screen and (max-width: 1366px) {
+    .container {
+        width: 70%;
+    }
+
+    .container h1 {
+        font-size: 45px;
+    }
+
+    .container p {
+        font-size: 22px;
+    }
+
+    .container-left,
+    .container-right {
+        padding: 40px;
+    }
+
+    input {
+        width: 90%;
+    }
+
+    .input-row .input-group {
+        flex-basis: 48%;
+    }
+
+    button {
+        width: 60%;
+    }
+}
+
+/* CSS for medium-sized screens (tablet) */
+@media only screen and (max-width: 1024px) {
+
+    .contact-box {
+        flex-direction: column;
+    }
+
+    .container {
+        width: 80%;
+    }
+
+    .container h1 {
+        font-size: 40px;
+    }
+
+    .container p {
+        font-size: 22px;
+    }
+
+    .container-left,
+    .container-right {
+        padding: 30px;
+    }
+
+    .input-row {
+        flex-wrap: wrap;
+    }
+
+    .input-row .input-group {
+        flex-basis: 100%;
+        margin-bottom: 15px;
+    }
+
+    button {
+        width: 25%;
+    }
+}
+
+/* CSS for smaller screens (mobile) */
+@media only screen and (max-width: 767px) {
+    .container {
+        width: 90%;
+    }
+
+    .container h1 {
+        font-size: 40px;
+    }
+
+    .container p {
+        font-size: 18px;
+    }
+
+    .container-left,
+    .container-right {
+        padding: 20px;
+    }
+
+    .input-row {
+        flex-direction: column;
+        /* Stack input rows vertically */
+    }
+
+    .input-row .input-group {
+        flex-basis: 100%;
+        margin-bottom: 15px;
+    }
+
+    input,
+    textarea {
+        padding: 8px;
+    }
+
+    button {
+        width: 60%;
+    }
+
+    tr td:first-child {
+        font-size: 15px;
+        font-weight: 600;
+        padding-right: 10px;
+    }
 }

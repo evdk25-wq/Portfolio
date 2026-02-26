@@ -1,166 +1,209 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Portfolio</title>
-     <link
-      rel="stylesheet"
-      href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="CSS/style.css" />
-    <link rel="stylesheet" href="CSS/Projet.css" />
-  </head>
 
-  <body>
-    <div class="fixed-menu">
-      <div class="top-section">
-        <button class="menu-button">
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-        </button>
-      </div>
-      <div class="middle-section">
-        <h2 class="menu-title">WebFrabik</h2>
-      </div>
-      <div class="bottom-section">
-        <p>2026</p>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="CSS/style.css" />
+  <link rel="stylesheet" href="CSS/Projet.css" />
+</head>
+
+<body>
+  <div class="fixed-menu">
+    <div class="top-section">
+      <button class="menu-button">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
     </div>
+    <div class="middle-section">
+      <a href="index.html" class="menu-title-link">
+        <h2 class="menu-title">Webfrabiks</h2>
+      </a>
+    </div>
+    <div class="bottom-section">
+      <p>2026</p>
+    </div>
+  </div>
 
-    <nav class="social">
+  <nav class="social">
+    <ul>
+      <li>
+        <a href="https://www.linkedin.com/in/j-l-vdk" target="_blank">
+          <i class="fa fa-linkedin"></i> <span>Linkedin</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" onclick="shareSite(event)">
+          <i class="fa fa-share-alt"></i> <span>Partager</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="menu-overlay">
+    <nav class="overlay-content">
       <ul>
-        
-          
-        <li>
-          <a href="https://www.linkedin.com/in/j-l-vdk" target="_blank">
-            <i class="fa fa-linkedin"></i> <span>Linkedin</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" onclick="shareSite(event)">
-            <i class="fa fa-share-alt"></i> <span>Partager</span>
-          </a>
-        </li>
+        <li><a href="index.html">ACCUEIL</a></li>
+        <li><a href="Solution.html">SOLUTION</a></li>
+        <li><a href="Projet.html">PROJET</a></li>
+        <li><a href="Contact.html">CONTACT</a></li>
+        <li><a href="Apropos.html">A PROPOS</a></li>
       </ul>
     </nav>
+  </div>
+  <div class="projects-container">
+    <h1 class="section-title">Applications Mobiles</h1>
+    <div class="projects-grid">
 
-    <div class="menu-overlay">
-      <nav class="overlay-content">
-        <ul>
-          <li><a href="Index.html">ACCUEIL</a></li>
-          <li><a href="Solution.html">SOLUTION</a></li>
-          <li><a href="Projet.html">PROJET</a></li>
-          <li><a href="Blog.html">BLOG</a></li>
-          <li><a href="Contact.html">CONTACT</a></li>
-          <li><a href="Apropos.html">A PROPOS</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <div class="page-wrap">
-      <div id="home-slider">
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide swiper-slide-one">
-              <div class="swiper-image" data-swiper-parallax-y="-20%">
-                <div
-                  class="swiper-image-inner swiper-image-left swiper-image-one"
-                >
-                  <h1>
-                    <span class="emphasis">Disponible sur le Playstore</span
-                    ><br />
-                    <span>OLOOP</span>
-                  </h1>
-                  <p>Cliquez vers l'app</p>
-                </div>
-              </div>
-              <div class="swiper-image" data-swiper-parallax-y="35%">
-                <div
-                  class="swiper-image-inner swiper-image-right swiper-image-two"
-                >
-                  <p class="paragraph">
-                    Oloop combine la puissance de votre bibliothèque musicale
-                    locale avec l'univers infini d'Audius, la plateforme de
-                    streaming décentralisée. Interface premium inspirée du
-                    vinyle, égaliseur professionnel, gestion intelligente des
-                    favoris et découverte musicale illimitée.
-                  </p>
-                </div>
+      <!-- Project 1: Oloop -->
+      <div class="project-card-wrapper">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="phone-mockup">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <img src="Assets/1.png" alt="Oloop">
               </div>
             </div>
-
-            <div class="swiper-slide swiper-slide-two">
-              <div class="swiper-image" data-swiper-parallax-y="-20%">
-                <div
-                  class="swiper-image-inner swiper-image-left swiper-image-three"
-                >
-                  <h1>
-                    <span class="emphasis">Tracengo</span><br />
-                    <span
-                      >Une application WEBFABRIKS pour la recherche des bornes
-                      electriques</span
-                    >
-                  </h1>
-                  <p>Cliquez vers l'app Android</p>
-                </div>
-              </div>
-              <div class="swiper-image" data-swiper-parallax-y="35%">
-                <div
-                  class="swiper-image-inner swiper-image-right swiper-image-four"
-                >
-                  <p class="paragraph">
-                    Tracengo est une application mobile premium de localisation
-                    et de navigation vers les bornes de recharge pour véhicules
-                    électriques, développée en Flutter pour iOS et Android.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide swiper-slide-three">
-              <div class="swiper-image" data-swiper-parallax-y="-20%">
-                <div
-                  class="swiper-image-inner swiper-image-left swiper-image-five"
-                >
-                  <h1>
-                    The <span class="emphasis">SOCIAL PET</span><br />
-                    <span>L'application pour les amis des animaux</span>
-                  </h1>
-                  <p>Cliquez vers l'app</p>
-                </div>
-              </div>
-              <div class="swiper-image" data-swiper-parallax-y="35%">
-                <div
-                  class="swiper-image-inner swiper-image-right swiper-image-six"
-                >
-                  <p class="paragraph">
-                    Social Pet - Le réseau social qui connecte votre animal au
-                    monde ! Créez des profils uniques pour vos compagnons,
-                    partagez leurs meilleurs moments en photos et vidéos.
-                  </p>
-                </div>
-              </div>
+            <div class="project-details">
+              <h2>Oloop</h2>
             </div>
           </div>
-          <div class="swiper-pagination"></div>
+          <div class="project-card-back">
+            <div class="back-content">
+              <h3>Stack Technique</h3>
+              <div class="stack-list">
+                Kotlin • Android SDK • ExoPlayer • Room Persistence
+              </div>
+              <a href="Oloop.html" class="btn-details">Voir le projet</a>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- Project 2: GoFood -->
+      <div class="project-card-wrapper">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="phone-mockup">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <img src="Assets/gofood1.png" alt="GoFood">
+              </div>
+            </div>
+            <div class="project-details">
+              <h2>GoFood</h2>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <div class="back-content">
+              <h3>Stack Technique</h3>
+              <div class="stack-list">
+                Java • Supabase Auth • Postgres Database • Google Maps API
+              </div>
+              <a href="GoFood.html" class="btn-details">Voir le projet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Tracengo -->
+      <div class="project-card-wrapper">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="phone-mockup">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <img src="Assets/tracengo1.png" alt="Tracengo">
+              </div>
+            </div>
+            <div class="project-details">
+              <h2>Tracengo</h2>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <div class="back-content">
+              <h3>Stack Technique</h3>
+              <div class="stack-list">
+                Flutter • Dart • Supabase Database • Google Maps Services
+              </div>
+              <a href="Tracengo.html" class="btn-details">Voir le projet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Nutris -->
+      <div class="project-card-wrapper">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="phone-mockup">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <img src="Assets/nutris1.png" alt="Nutris">
+              </div>
+            </div>
+            <div class="project-details">
+              <h2>Nutris</h2>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <div class="back-content">
+              <h3>Stack Technique</h3>
+              <div class="stack-list">
+                Java • Android SDK • SQLite • Charts JS
+              </div>
+              <a href="Nutris.html" class="btn-details">Voir le projet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5: Maravu -->
+      <div class="project-card-wrapper">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="phone-mockup">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <img src="Assets/maravu1.png" alt="Maravu">
+              </div>
+            </div>
+            <div class="project-details">
+              <h2>Maravu</h2>
+            </div>
+          </div>
+          <div class="project-card-back">
+            <div class="back-content">
+              <h3>Stack Technique</h3>
+              <div class="stack-list">
+                Kotlin • Media3 • Calm UI Patterns • Local Database
+              </div>
+              <a href="Maravu.html" class="btn-details">Voir le projet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="JS/javascript.js"></script>
-    <script src="JS/Projet.js"></script>
-  </body>
+    <h1 class="section-title">Sites Web</h1>
+    <div class="projects-grid">
+      <!-- Les sites web viendront ici -->
+      <p style="opacity: 0.5; font-style: italic; color: white;">Vos réalisations web seront bientôt disponibles...</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="JS/javascript.js"></script>
+  <script src="JS/Projet.js"></script>
+</body>
+
 </html>

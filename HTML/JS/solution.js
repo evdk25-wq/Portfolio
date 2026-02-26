@@ -1,116 +1,127 @@
-gsap.registerPlugin(CustomEase, Flip);
+const config = {
+  scrollDelay: 1500,
+  autoPlayDelay: 6000,
+  animationExitDuration: 700,
+};
 
-CustomEase.create("osmo-ease", "0.625, 0.05, 0, 1");
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+const totalSlides = slides.length;
+let isScrolling = false;
 
-gsap.defaults({
-  ease: "osmo-ease",
-  duration: 0.8,
-});
+const portfolioData = [
+  {
+    number: "01 / 02",
+    title: "Web Development",
+    description: "Le pôle Web Development assure la conception de plateformes performantes alliant une architecture technique robuste à une ergonomie fluide. Chaque solution est développée sur mesure pour garantir une rapidité d'exécution optimale et une adaptabilité parfaite aux enjeux de votre activité."
+  },
+  {
+    number: "02 / 02",
+    title: "Mobile Applications",
+    description: "Le développement Mobile App conçoit des solutions natives ou hybrides fluides et performantes sur les environnements iOS et Android. Chaque interface est optimisée pour exploiter pleinement les fonctionnalités des appareils afin d'offrir une expérience utilisateur intuitive et engageante."
+  }
+];
 
-function initFlipButtons() {
-  const wrappers = document.querySelectorAll('[data-flip-button="wrap"]');
+function updateContent(index) {
+  const data = portfolioData[index];
+  const elements = ["portfolioNumber", "portfolioTitle", "portfolioDescription"];
+  const portfolioButton = document.querySelector(".portfolio-button");
 
-  wrappers.forEach((wrapper) => {
-    const buttons = wrapper.querySelectorAll('[data-flip-button="button"]');
-    const bg = wrapper.querySelector('[data-flip-button="bg"]');
-
-    if (!bg) return;
-
-    buttons.forEach((button) => {
-      button.addEventListener("mouseenter", function () {
-        const state = Flip.getState(bg);
-        this.appendChild(bg);
-        Flip.from(state, { duration: 0.4 });
-      });
-
-      button.addEventListener("focus", function () {
-        const state = Flip.getState(bg);
-        this.appendChild(bg);
-        Flip.from(state, { duration: 0.4 });
-      });
-
-      button.addEventListener("mouseleave", function () {
-        const activeLink = wrapper.querySelector(".active");
-        if (!activeLink) return;
-        const state = Flip.getState(bg);
-        activeLink.appendChild(bg);
-        Flip.from(state, { duration: 0.4 });
-      });
-
-      button.addEventListener("blur", function () {
-        const activeLink = wrapper.querySelector(".active");
-        if (!activeLink) return;
-        const state = Flip.getState(bg);
-        activeLink.appendChild(bg);
-        Flip.from(state, { duration: 0.4 });
-      });
-    });
+  elements.forEach((id) => {
+    document.getElementById(id).style.animation = "fadeOutDown 0.4s ease-in forwards";
   });
+  portfolioButton.style.animation = "fadeOutDown 0.4s ease-in forwards";
+
+  setTimeout(() => {
+    document.getElementById("portfolioNumber").textContent = data.number;
+    document.getElementById("portfolioTitle").textContent = data.title;
+    document.getElementById("portfolioDescription").textContent = data.description;
+
+    document.getElementById("portfolioNumber").style.animation = "slideInFromTop 0.8s ease-out 0.2s forwards";
+    document.getElementById("portfolioTitle").style.animation = "bounceIn 1s ease-out 0.4s forwards";
+    document.getElementById("portfolioDescription").style.animation = "fadeInUp 0.8s ease-out 0.6s forwards";
+    portfolioButton.style.animation = "floatIn 0.8s ease-out 0.8s forwards";
+  }, config.animationExitDuration);
 }
 
-function initTabSystem() {
-  const wrappers = document.querySelectorAll('[data-tabs="wrapper"]');
+function showSlide(index) {
+  slides.forEach((slide) => slide.classList.remove("active"));
+  dots.forEach((dot) => dot.classList.remove("active"));
 
-  wrappers.forEach((wrapper) => {
-    const nav = wrapper.querySelector('[data-tabs="nav"]');
-    const buttons = nav.querySelectorAll('[data-tabs="button"]');
-    const contentWrap = wrapper.querySelector('[data-tabs="content-wrap"]');
-    const contentItems = contentWrap.querySelectorAll('[data-tabs="content-item"]');
-    const visualWrap = wrapper.querySelector('[data-tabs="visual-wrap"]');
-    const visualItems = visualWrap.querySelectorAll('[data-tabs="visual-item"]');
+  slides[index].classList.add("active");
+  dots[index].classList.add("active");
 
-    let activeButton = null;
-    let activeContent = null;
-    let activeVisual = null;
-    let isAnimating = false;
+  updateContent(index);
+  currentSlide = index;
+}
 
-    function switchTab(index, initial = false) {
-      if (!initial && (isAnimating || buttons[index] === activeButton)) return;
-      isAnimating = true;
+function nextSlide() {
+  const next = (currentSlide + 1) % totalSlides;
+  showSlide(next);
+}
 
-      const outgoingContent = activeContent;
-      const incomingContent = contentItems[index];
-      const outgoingVisual = activeVisual;
-      const incomingVisual = visualItems[index];
+function prevSlide() {
+  const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+  showSlide(prev);
+}
 
-      const outgoingLines = outgoingContent ? outgoingContent.querySelectorAll("[data-tabs-fade]") : [];
-      const incomingLines = incomingContent.querySelectorAll("[data-tabs-fade]");
+window.addEventListener("wheel", (e) => {
+  if (isScrolling) return;
 
-      const timeline = gsap.timeline({
-        onComplete: () => {
-          if (!initial && outgoingContent) {
-            outgoingContent.classList.remove("active");
-            outgoingVisual.classList.remove("active");
-          }
-          activeContent = incomingContent;
-          activeVisual = incomingVisual;
-          isAnimating = false;
-        },
-      });
+  isScrolling = true;
+  if (e.deltaY > 0) {
+    nextSlide();
+  } else {
+    prevSlide();
+  }
 
-      incomingContent.classList.add("active");
-      incomingVisual.classList.add("active");
+  setTimeout(() => {
+    isScrolling = false;
+  }, config.scrollDelay);
+});
 
-      timeline
-        .to(outgoingLines, { autoAlpha: 0, duration: 0.3 }, 0)
-        .to(outgoingVisual, { autoAlpha: 0, scale: 0.98, duration: 0.3 }, 0)
-        .fromTo(incomingLines, { y: "1em", autoAlpha: 0 }, { y: "0em", autoAlpha: 1, stagger: 0.05, duration: 0.5 }, 0.2)
-        .fromTo(incomingVisual, { autoAlpha: 0, scale: 0.98 }, { autoAlpha: 1, scale: 1, duration: 0.5 }, 0.2);
+let touchStartY = 0;
+window.addEventListener("touchstart", (e) => {
+  touchStartY = e.touches[0].clientY;
+});
 
-      if (activeButton) activeButton.classList.remove("active");
-      buttons[index].classList.add("active");
-      activeButton = buttons[index];
+window.addEventListener("touchend", (e) => {
+  if (isScrolling) return;
+
+  const touchEndY = e.changedTouches[0].clientY;
+  const diff = touchStartY - touchEndY;
+
+  if (Math.abs(diff) > 50) {
+    isScrolling = true;
+    if (diff > 0) {
+      nextSlide();
+    } else {
+      prevSlide();
     }
 
-    switchTab(0, true);
-
-    buttons.forEach((button, i) => {
-      button.addEventListener("click", () => switchTab(i));
-    });
-  });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  initTabSystem();
-  initFlipButtons();
+    setTimeout(() => {
+      isScrolling = false;
+    }, config.scrollDelay);
+  }
 });
+
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    if (!isScrolling) {
+      showSlide(index);
+    }
+  });
+});
+
+window.addEventListener("keydown", (e) => {
+  if (isScrolling) return;
+
+  if (e.key === "ArrowDown" || e.key === "ArrowRight") {
+    nextSlide();
+  } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+    prevSlide();
+  }
+});
+
+setInterval(nextSlide, config.autoPlayDelay);

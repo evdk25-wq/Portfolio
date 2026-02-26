@@ -1,19 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
-
+/* Base Styles inherited from previous design */
 body {
   margin: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  font-family: 'Arial Black', sans-serif;
+  overflow-x: hidden;
 }
 
-.color-change-2x {
-  animation: color-change-2x 5s linear infinite alternate both;
-}
+
 
 h1.text-flicker-in-glow {
   font-size: 4rem;
@@ -46,21 +37,13 @@ button.text-flicker-in-glow {
   animation: text-flicker-in-glow 4s linear both;
 }
 
-button:hover {
+button.text-flicker-in-glow:hover {
   background: #fff;
   color: #000;
   box-shadow: 0 0 20px #fff;
 }
 
-@keyframes color-change-2x {
-  0% {
-    background: #020111;
-  }
 
-  100% {
-    background: #20202c;
-  }
-}
 
 @keyframes text-flicker-in-glow {
   0% {
@@ -164,7 +147,7 @@ body {
       rgba(10, 20, 40, 0.95),
       rgba(5, 15, 30, 0.97));
   border-right: 1px solid var(--color-border);
-  z-index: 20;
+  z-index: 50;
   /* Higher than overlay */
   display: flex;
   flex-direction: column;
@@ -193,7 +176,7 @@ body {
   justify-content: center;
   padding: 10px 0;
   position: relative;
-  z-index: 30;
+  z-index: 100;
   /* Highest z-index to stay on top */
 }
 
@@ -249,6 +232,14 @@ body {
   text-transform: uppercase;
 }
 
+.menu-title-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Bottom Section */
 .bottom-section {
   font-family: var(--font-heading);
@@ -274,7 +265,7 @@ body {
   background: linear-gradient(135deg,
       rgba(10, 20, 40, 0.95),
       rgba(5, 15, 30, 0.97));
-  z-index: 10;
+  z-index: 40;
   transform: translateX(-100%);
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
@@ -602,10 +593,10 @@ body.menu-open .container {
 
 .social ul li {
   background: rgba(0, 0, 0, 0.7);
-  margin-bottom: 8px;
-  width: 180px;
-  border-radius: 30px 0 0 30px;
-  transform: translateX(130px);
+  margin-bottom: 6px;
+  width: 203px;
+  border-radius: 22px 0 0 22px;
+  transform: translateX(150px);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -626,19 +617,19 @@ body.menu-open .container {
   align-items: center;
   text-decoration: none;
   color: #fff;
-  padding: 8px;
+  padding: 6px;
 }
 
 .social ul li i {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   background: #fff;
   color: #000;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 21px;
   transition: transform 0.4s;
 }
 
@@ -648,7 +639,7 @@ body.menu-open .container {
 
 .social ul li span {
   padding-left: 15px;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;

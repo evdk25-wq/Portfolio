@@ -3,16 +3,14 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
-   <link
-      rel="stylesheet"
-      href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
-    />
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="CSS/style.css" />
   <link rel="stylesheet" href="CSS/Formulaire.css" />
 </head>
 
-<body class="color-change-2x">
+<body>
   <div class="fixed-menu">
     <div class="top-section">
       <button class="menu-button">
@@ -22,54 +20,125 @@
       </button>
     </div>
     <div class="middle-section">
-      <h2 class="menu-title">WebFrabik</h2>
+      <a href="index.html" class="menu-title-link">
+        <h2 class="menu-title">Webfrabiks</h2>
+      </a>
     </div>
     <div class="bottom-section">
       <p>2026</p>
     </div>
   </div>
 
-   <nav class="social">
-      <ul>
-        
-          
-        <li>
-          <a href="https://www.linkedin.com/in/j-l-vdk" target="_blank">
-            <i class="fa fa-linkedin"></i> <span>Linkedin</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" onclick="shareSite(event)">
-            <i class="fa fa-share-alt"></i> <span>Partager</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
+  <nav class="social">
+    <ul>
+      <li class="linkedin">
+        <a href="https://www.linkedin.com/in/j-l-vdk" target="_blank">
+          <i class="fa fa-linkedin"></i> <span>Linkedin</span>
+        </a>
+      </li>
+      <li class="share">
+        <a href="#" onclick="shareSite(event)">
+          <i class="fa fa-share-alt"></i> <span>Partager</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
   <div class="menu-overlay">
     <nav class="overlay-content">
       <ul>
-        <li><a href="Index.html">ACCUEIL</a></li>
+        <li><a href="index.html">ACCUEIL</a></li>
         <li><a href="Solution.html">SOLUTION</a></li>
         <li><a href="Projet.html">PROJET</a></li>
-        <li><a href="Blog.html">BLOG</a></li>
         <li><a href="Contact.html">CONTACT</a></li>
         <li><a href="Apropos.html">A PROPOS</a></li>
       </ul>
     </nav>
   </div>
-  <header>CONTACT</header>
 
-  <form id="form" class="topBefore">
-    <input id="name" type="text" placeholder="NOM" />
-    <input id="email" type="text" placeholder="E-MAIL" />
-    <textarea id="message" type="text" placeholder="MESSAGE"></textarea>
-    <input id="submit" type="submit" value="GO!" />
-  </form>
+
+
+
+  <!-- Contact form section -->
+  <div class="contact-box">
+    <!-- Left side of the form -->
+    <div class="container-left">
+      <h3>Formulaire de contact* </h3>
+      <!-- Form -->
+      <form id="contactForm" onsubmit="return validateForm();">
+        <div class="input-row">
+          <div class="input-group">
+            <label>Nom*</label>
+            <input type="text" id="name" placeholder="Entrez votre nom" required />
+          </div>
+
+          <div class="input-group">
+            <label>Téléphone*</label>
+            <input type="text" id="phone" placeholder="+32411223344" required />
+          </div>
+        </div>
+
+        <!-- Input row for Email and Subject -->
+        <div class="input-row">
+          <div class="input-group">
+            <label>Email*</label>
+            <input type="email" id="email" placeholder="votremail@gmail.com" required />
+          </div>
+
+          <div class="input-group">
+            <label>Sujet</label>
+            <input type="text" id="subject" placeholder="Concerne" />
+          </div>
+        </div>
+
+        <!-- Label for Message textarea -->
+        <label>Message*</label>
+        <textarea rows="10" id="message" placeholder="Tapez votre message" required></textarea>
+        <button type="submit">Envoyer!</button>
+      </form>
+    </div>
+    <!-- Right side with contact information -->
+    <div class="container-right">
+      <h3>Me trouver</h3>
+      <!-- Table for contact information -->
+      <table>
+        <tr>
+          <td>Email:</td>
+          <td>edwin.vdk89@gmail.com</td>
+        </tr>
+
+        <tr>
+          <td>Phone:</td>
+          <td>+32456787876</td>
+        </tr>
+
+        <tr>
+          <td>Address:</td>
+          <td>
+            Webfrabiks srl <br />
+            42 Avenue Louise, <br />
+            Ixelles - 1050, Belgique
+          </td>
+        </tr>
+      </table>
+
+      <!-- Map section -->
+      <div class="map">
+        <!-- Google Map iframe -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.570265213606!2d4.356260777000108!3d50.83912615914106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c43c2fc77ce1%3A0x2da2a6020067a5f7!2sAv.%20Louise%2042%2C%201050%20Bruxelles!5e0!3m2!1sfr!2sbe!4v1707942800000!5m2!1sfr!2sbe"
+          width="100%" height="275" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
   <script src="JS/javascript.js"></script>
+  <script src="JS/Formulaire.js"></script>
 </body>
 
 </html>

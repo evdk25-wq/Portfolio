@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Projet - GoFood</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/Projet.css" />
+    <style>
+        .project-detail-view {
+            width: calc(100% - 120px);
+            margin-left: 120px;
+            min-height: 100vh;
+            display: flex;
+            padding: 80px;
+            gap: 60px;
+        }
+
+        .project-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .project-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-content h1 {
+            font-family: var(--font-display);
+            font-size: 5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+        }
+
+        .project-content .tag {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.6;
+        }
+
+        .project-content p {
+            font-family: var(--font-body);
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .back-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-family: var(--font-heading);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            transition: gap 0.3s;
+        }
+
+        .back-link:hover {
+            gap: 20px;
+        }
+
+        @media (max-width: 991px) {
+            .project-detail-view {
+                width: 100%;
+                margin-left: 0;
+                flex-direction: column;
+                padding: 40px 20px;
+            }
+
+            .project-content h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fixed-menu">
+        <div class="top-section">
+            <button class="menu-button">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+        </div>
+        <div class="middle-section">
+            <a href="index.html" class="menu-title-link">
+                <h2 class="menu-title">Webfrabiks</h2>
+            </a>
+        </div>
+        <div class="bottom-section">
+            <p>2026</p>
+        </div>
+    </div>
+
+    <div class="menu-overlay">
+        <nav class="overlay-content">
+            <ul>
+                <li><a href="index.html">ACCUEIL</a></li>
+                <li><a href="Solution.html">SOLUTION</a></li>
+                <li><a href="Projet.html">PROJET</a></li>
+                <li><a href="Contact.html">CONTACT</a></li>
+                <li><a href="Apropos.html">A PROPOS</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="project-detail-view">
+        <div class="project-visual">
+            <div class="phone-mockup" style="width: 320px; height: 640px;">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                    <img src="Assets/gofood2.png" alt="GoFood Preview">
+                </div>
+            </div>
+        </div>
+
+        <div class="project-content">
+            <a href="Projet.html" class="back-link"><i class="fa fa-arrow-left"></i> Retour aux projets</a>
+            <h1>GoFood</h1>
+            <div class="tag">Application Mobile • Android</div>
+            <p>
+                GoFood simplifie votre quotidien en connectant les meilleurs restaurants locaux directement à votre
+                porte.
+                Notre algorithme de livraison intelligent garantit des repas chauds et rapides, tout en offrant une
+                interface utilisateur fluide et gourmande.
+            </p>
+            <p>
+                Avec une gestion intuitive des commandes et des paiements sécurisés, GoFood est le compagnon idéal de
+                vos soirées et déjeuners pressés.
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+    <script src="JS/javascript.js"></script>
+</body>
+
+</html>
