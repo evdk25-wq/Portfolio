@@ -57,8 +57,7 @@
   width: 400px;
   min-height: 100%;
   padding: 50px 30px;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   color: #fff;
   opacity: 0;
@@ -114,7 +113,8 @@
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.7;
-  font-weight: 300;
+  font-weight: 400;
+  color: #ffffff;
 }
 
 .profile-social-links {
@@ -214,9 +214,8 @@
   100% {
     width: 825px;
     height: auto;
-    background: rgba(22, 39, 54, 0.8);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(13, 25, 33, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
   }
 }
