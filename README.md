@@ -1,4 +1,4 @@
-# Portfolio - Edwin VDK
+# Portfolio - JLVDK
 
 Bienvenue sur mon portfolio professionnel. Je suis un Développeur Web & Mobile spécialisé dans la conception d'applications mobiles performantes et d'écosystèmes web modernes.
 
