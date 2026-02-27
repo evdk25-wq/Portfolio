@@ -90,7 +90,11 @@
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
-  transform: none;
+  transform: translateZ(0);
+  /* Force hardware acceleration */
+  image-rendering: -webkit-optimize-contrast;
+  /* Sharper rendering for some browsers */
+  backface-visibility: hidden;
   border: 3px solid var(--color-accent);
   box-shadow: 0 0 20px rgba(127, 185, 212, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
