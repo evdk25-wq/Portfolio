@@ -77,13 +77,20 @@
   text-transform: uppercase;
 }
 
-.profile-card header a img {
+.profile-card header a {
+  display: block;
+  margin: 0 auto;
   width: 160px;
   height: 160px;
+}
+
+.profile-card header a img {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 15%;
-  transform: scale(1.1);
+  object-position: center;
+  transform: none;
   border: 3px solid var(--color-accent);
   box-shadow: 0 0 20px rgba(127, 185, 212, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;

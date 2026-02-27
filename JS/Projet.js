@@ -17,3 +17,20 @@ var mySwiper = new Swiper(".swiper-container", {
     },
   },
 });
+
+// Swiper pour les projets Web (Portfolio)
+var webSwiper = new Swiper(".web-project-swiper", {
+  loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
