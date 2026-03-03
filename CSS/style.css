@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   overflow-x: hidden;
@@ -102,15 +101,15 @@ button.text-flicker-in-glow:hover {
   --font-heading: "EB Garamond", serif;
   --font-body: "Inter", sans-serif;
 
-  
+
   --color-hover-strike: #7fb9d4;
 
-  
+
   --transition-fast: 0.3s;
   --transition-medium: 0.6s;
   --transition-slow: 1s;
 
-  
+
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-circ: cubic-bezier(0.85, 0, 0.15, 1);
 }
@@ -148,7 +147,7 @@ body {
       rgba(5, 15, 30, 0.97));
   border-right: 1px solid var(--color-border);
   z-index: 50;
-  
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -177,7 +176,7 @@ body {
   padding: 10px 0;
   position: relative;
   z-index: 100;
-  
+
 }
 
 .menu-button .line {
@@ -215,7 +214,7 @@ body {
 
 .middle-section {
   flex: 1;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -343,7 +342,7 @@ body::before {
   width: 120px;
   height: 100vh;
   z-index: 8;
-  
+
 }
 
 
@@ -383,14 +382,14 @@ body::before {
   justify-content: center;
   align-items: flex-start;
   padding-left: 180px;
-  
+
   padding-right: 5%;
   overflow: hidden;
-  
+
   position: relative;
-  
+
   z-index: 1;
-  
+
 }
 
 
@@ -399,25 +398,25 @@ body::before {
   text-align: left;
   width: 100%;
   margin-top: -40px;
-  
+
 }
 
 .overlay-content li {
   margin: 0;
   padding: 1em 0;
   overflow: hidden;
-  
+
   position: relative;
   line-height: 1;
-  
+
   pointer-events: none;
-  
+
 }
 
 
 .overlay-content li a {
   color: white;
-  
+
   text-decoration: none;
   font-size: clamp(30px, 6vw, 80px);
   position: relative;
@@ -427,12 +426,12 @@ body::before {
   text-transform: uppercase;
   font-family: var(--font-display);
   transform: translateY(120%);
-  
+
   opacity: 0;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
     opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: auto;
-  
+
 }
 
 
@@ -458,7 +457,7 @@ body.menu-open .overlay-content li a {
   left: 0;
   top: 50%;
   height: 6px;
-  
+
   width: 0;
   background-color: var(--color-hover-strike);
   transition: width 0.5s var(--ease-in-out-circ);
@@ -467,7 +466,7 @@ body.menu-open .overlay-content li a {
 
 .overlay-content a:hover::after {
   width: 100%;
-  
+
 }
 
 
@@ -477,9 +476,9 @@ body.menu-open .overlay-content li a {
   display: flex;
   flex-direction: row;
   left: -120px;
-  
+
   width: calc(100% - 240px);
-  
+
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -491,7 +490,7 @@ body.menu-open .container {
 
 body.menu-open .container {
   transform: none;
-  
+
 }
 
 
@@ -548,7 +547,38 @@ body.menu-open .container {
 
 
 @media (max-width: 991px) {
+  .fixed-menu {
+    width: 100%;
+    height: 70px;
+    flex-direction: row;
+    padding: 0 30px;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .top-section {
+    width: auto;
+    order: 2;
+  }
+
+  .middle-section {
+    transform: none;
+    padding: 0;
+    flex: none;
+    order: 1;
+  }
+
+  .bottom-section {
+    display: none;
+  }
+
   .container {
+    position: relative;
+    left: 0;
+    top: 70px;
+    width: 100%;
+    height: auto;
+    min-height: calc(100vh - 70px);
     flex-direction: column;
   }
 
@@ -562,7 +592,7 @@ body.menu-open .container {
   }
 
   .text-side {
-    padding: 40px;
+    padding: 40px 20px;
   }
 
   .text-side h1 {
@@ -570,11 +600,22 @@ body.menu-open .container {
   }
 
   .overlay-content {
-    padding-left: 140px;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
   }
 
-  .overlay-content a {
-    font-size: clamp(30px, 7vw, 70px);
+  .overlay-content ul {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .overlay-content li a {
+    font-size: clamp(24px, 8vw, 40px);
+  }
+
+  .social {
+    display: none;
   }
 }
 
@@ -583,6 +624,21 @@ body.menu-open .container {
   bottom: 40px;
   right: 0;
   z-index: 9999;
+}
+
+@media (max-width: 480px) {
+  h1.text-flicker-in-glow {
+    font-size: 2.2rem;
+  }
+
+  h2.text-flicker-in-glow {
+    font-size: 1.2rem;
+  }
+
+  button.text-flicker-in-glow {
+    padding: 12px 30px;
+    font-size: 13px;
+  }
 }
 
 .social ul {

@@ -12,7 +12,7 @@ function openMenu() {
   menuButton.classList.add("is-active");
   body.classList.add("menu-open");
 
-  if (container) {
+  if (container && window.innerWidth > 991) {
     gsap.to(container, {
       x: "100px",
       duration: 0.8,
@@ -22,7 +22,8 @@ function openMenu() {
 }
 
 function closeMenu() {
-  if (container) {
+  const isMobile = window.innerWidth <= 991;
+  if (container && !isMobile) {
     gsap.to(container, {
       x: "0px",
       duration: 0.6,
@@ -56,10 +57,11 @@ document.addEventListener("keydown", (event) => {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
+  const isMobile = window.innerWidth <= 991;
   gsap.fromTo(
     ".fixed-menu",
-    { x: -120, opacity: 0 },
-    { x: 0, opacity: 1, duration: 0.6, ease: "power2.out", delay: 0.1 }
+    { x: isMobile ? 0 : -120, y: isMobile ? -70 : 0, opacity: 0 },
+    { x: 0, y: 0, opacity: 1, duration: 0.6, ease: "power2.out", delay: 0.1 }
   );
 });
 
@@ -79,7 +81,7 @@ if (next && prev && slideContainer) {
   });
 }
 
-window.shareSite = async function(e) {
+window.shareSite = async function (e) {
   e.preventDefault();
   if (navigator.share) {
     try {

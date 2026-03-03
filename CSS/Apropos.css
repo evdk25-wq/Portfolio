@@ -246,21 +246,49 @@
   .container-apropos {
     width: 100%;
     margin-left: 0;
+    margin-top: 70px;
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   @keyframes materia {
     100% {
-      width: 320px;
-      height: auto;
-      background: rgba(22, 39, 54, 0.9);
+      width: 90%;
+      height: 85vh;
+      background: rgba(22, 39, 54, 0.95);
       border-radius: 20px;
+      overflow-y: auto;
     }
   }
 
-  .profile-card header,
+  .profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-card header {
+    width: 100%;
+    padding: 30px 20px;
+    float: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
   .profile-card .profile-bio {
     width: 100%;
+    padding: 30px 20px;
     float: none;
-    border: none;
+  }
+
+  .profile-card .profile-bio p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .profile-social-links {
+    padding: 15px;
   }
 }

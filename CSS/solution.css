@@ -347,9 +347,18 @@ body {
 
 
 @media (max-width: 768px) {
+	body {
+		padding-top: 70px;
+	}
+
+	.slideshow-container {
+		height: calc(100vh - 70px);
+	}
+
 	.portfolio-item {
-		min-width: 300px;
-		padding: 40px 30px;
+		min-width: 90%;
+		max-width: 95%;
+		padding: 30px 20px;
 	}
 
 	.portfolio-title {
